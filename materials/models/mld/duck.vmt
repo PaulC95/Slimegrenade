@@ -1,0 +1,11 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/MLD/duck"
+	"$bumpmap" "models/MLD/duck_normal"
+	"$phong" "1"
+	"$phongexponent" "3"
+	"$phongboost" "0.032"
+	"$phongfresnelranges"	"[.25 1 4]"
+	"$blendtintbybasealpha" "1" 
+}
+

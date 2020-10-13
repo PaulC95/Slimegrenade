@@ -1,0 +1,11 @@
+{
+	"title"		:	"Duck Grenade",
+	"type"		:	"Weapon",
+	"tags"		:	[ "comic", "fun" ],
+	"ignore"	:
+	[
+		"*.psd",
+		"*.vcproj",
+		"*.svn*"
+	]
+}
