@@ -117,7 +117,7 @@ function Spawnin(npccount,ent, scale)
 		headturtle:SetNPCState(2)
 		headturtle:SetModelScale( headturtle:GetModelScale()*12*scale,0)
 		//headturtle:SetModelScale( headturtle:GetModelScale()*3*scale,0)
-		print("scaleonspawncrab: " .. headturtle:GetModelScale())
+		//print("scaleonspawncrab: " .. headturtle:GetModelScale())
 
 		
 
@@ -130,7 +130,7 @@ function Spawnin(npccount,ent, scale)
 		turtle:SetParent(headturtle)
 		turtle:SetModelScale( turtle:GetModelScale()*12*scale,0)
 		//turtle:SetNoDraw(true)
-		print("scaleonspawnslime: " .. turtle:GetModelScale())
+		////print("scaleonspawnslime: " .. turtle:GetModelScale())
 		
 		--headturtle:SetCollisionGroup(COLLISION_GROUP_WEAPON)
 		
@@ -234,9 +234,9 @@ if SERVER and GetConVarString("gamemode") == "terrortown" then
 function TurtleNadeDamage(victim, dmg)
 
 	local attacker = dmg:GetAttacker()
-	//print("ow")
-	//print(dmg:GetDamageType())
-	if dmg:IsDamageType(16384) then print("drowning") return true end
+	////print("ow")
+	////print(dmg:GetDamageType())
+	if dmg:IsDamageType(16384) then  return true end
 	
 	if attacker:IsValid() and attacker:IsNPC() and attacker:GetClass() == TurtleNPCClass then
 		if victim:IsTraitor() == false  then
@@ -284,14 +284,14 @@ function TurtleNadeDamage(victim, dmg)
 		end
 
 		if (victim:Health() - dmg:GetDamage()) < 980 then
-			//print(victim:GetChildren()[1])
-			//print(victim:GetChildren()[1]:GetModelRenderBounds())
-			print("victims model scale:")
-			print(victim:GetModelScale())
-			//print("deathind: " .. deathind)
+			////print(victim:GetChildren()[1])
+			////print(victim:GetChildren()[1]:GetModelRenderBounds())
+			//print("victims model scale:")
+			//print(victim:GetModelScale())
+			////print("deathind: " .. deathind)
 			deathind = deathind+1
 			if victim:GetModelScale() > 1.6 then
-				print(victim:GetModelRadius())			
+				//print(victim:GetModelRadius())			
 				Spawnin(2,victim,(1/(deathind*2)))
 			
 				victim:Remove()
@@ -307,7 +307,7 @@ function TurtleNadeDamage(victim, dmg)
 			turtle:SetMoveType(  MOVETYPE_VPHYSICS )   
 			turtle:SetSolid( SOLID_VPHYSICS )
 			turtle:SetModelScale( turtle:GetModelScale()*0.6,0)
-			print(turtle:GetModelRadius())
+			//print(turtle:GetModelRadius())
 			//turtle:SetCollisionGroup(COLLISION_GROUP_NONE)
 			
 			turtle:Spawn()
